@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "harcvhandletidag",
+      "dependencies": {
+        "wrangler": "^4.94.0",
+      },
       "devDependencies": {
         "@eslint/compat": "^2.0.4",
         "@sveltejs/adapter-cloudflare": "^7.2.8",

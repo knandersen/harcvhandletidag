@@ -27,12 +27,17 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "bun run build && wrangler dev",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"deploy": "bun run build && wrangler deploy",
+		"cf-typegen": "wrangler types"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"wrangler": "^4.94.0"
+	}
 }

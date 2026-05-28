@@ -6,4 +6,22 @@
 
 @theme {
 	--font-sans: 'Montserrat', sans-serif;
+
+	--color-foreground-50: #f0f0f5;
+	--color-foreground-100: #b4b5cc;
+	--color-foreground-200: #9497b6;
+	--color-foreground-300: #5d618d;
+	--color-foreground-400: #333550;
+	--color-foreground-500: #202235;
+	--color-foreground-600: #0f101c;
+	--color-foreground: var(--color-foreground-500);
+
+	--color-accent-50: #fdeded;
+	--color-accent-100: #f5a4a1;
+	--color-accent-200: #f27772;
+	--color-accent-300: #c2352a;
+	--color-accent-400: #86221a;
+	--color-accent-500: #611610;
+	--color-accent-600: #280503;
+	--color-accent: var(--color-accent-300);
 }

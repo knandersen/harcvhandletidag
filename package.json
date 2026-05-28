@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/montserrat": "^5.2.8",
 		"wrangler": "^4.94.0"
 	}
 }

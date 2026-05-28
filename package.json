@@ -39,6 +39,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/montserrat": "^5.2.8",
+		"luxon": "^3.7.2",
 		"wrangler": "^4.94.0"
 	}
 }

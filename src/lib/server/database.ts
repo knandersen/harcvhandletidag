@@ -9,21 +9,20 @@ export interface Env {
 
 export const getHype = async (env: Env) => {
 	const db = drizzle(env.D1);
-	const res = await db.select().from(hype).limit(1);
+	const res = await db.select().from(hype).where(eq(hype.id, 1));
 
-	if (!res || res.length === 0) {
-		console.log('No hype found for today, creating new entry with hype level 0');
-		const newHype = await db
-			.insert(hype)
-			.values({
-				hypeLevel: 0
-			})
-			.returning()
-			.get();
+	// if (!res || res.length === 0) {
+	// 	const newHype = await db
+	// 		.insert(hype)
+	// 		.values({
+	// 			hypeLevel: 0
+	// 		})
+	// 		.returning()
+	// 		.get();
 
-		console.log('Created new hype entry:', newHype);
-		return newHype;
-	}
+	// 	console.log('Created new hype entry:', newHype);
+	// 	return newHype;
+	// }
 	return res[0];
 };
 
@@ -32,8 +31,8 @@ export const setHype = async (env: Env, newLevel: number) => {
 	const today = await getHype(env);
 	const updatedHype = await db
 		.update(hype)
-		.set({ hypeLevel: newLevel })
-		.where(eq(hype.id, today.id))
+		.set({ hypeLevel: (today.hypeLevel || 0) + newLevel })
+		.where(eq(hype.id, 1))
 		.returning()
 		.get();
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { CountUp } from 'countup.js';
 	import { hype } from '$src/lib/constants.svelte';
+	import { CountUp } from 'countup.js';
+	import { onMount } from 'svelte';
 	let counterEl: HTMLSpanElement | null = null;
 	let counter: CountUp | null = null;
 	let count = 0;
@@ -67,14 +67,16 @@
 	}
 </script>
 
-<div class="text-center text-balance">
-	<span bind:this={counterEl}>{formatterDK.format(hype.level)}</span> hype point siden seneste
-	handel.
+<div class="flex flex-col items-center gap-4 text-center text-balance">
 	<button
 		onclick={handleClick}
-		class="rounded bg-accent px-4 py-2 font-bold text-white hover:bg-accent-200"
+		class="size-40 rotate-12 rounded-full bg-accent px-4 py-2 text-4xl font-bold text-white uppercase transition-transform duration-150 ease-out hover:bg-accent-200
+               active:scale-110"
 	>
-		Køb, køb, køb!!!
+		køb!
 	</button>
+	<div>
+		<span bind:this={counterEl}>{formatterDK.format(hype.level)}</span> hype point siden seneste handel.
+	</div>
 </div>
 .

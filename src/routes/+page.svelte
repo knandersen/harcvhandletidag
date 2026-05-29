@@ -5,14 +5,16 @@
 
 <svelte:head><title>Har CV handlet i dag?</title></svelte:head>
 <div
-	class="relative flex h-full min-h-screen w-full flex-col items-center justify-center gap-8 border text-foreground-400"
+	class="relative flex h-full min-h-screen w-full flex-col items-center justify-center gap-16 border text-foreground-400"
 >
-	<div class="text-9xl font-bold">Nej</div>
-	<div class="max-w-md text-center text-2xl">
-		<SidsteHandel />
-	</div>
+	<section class="flex flex-col items-center gap-8">
+		<div class="text-9xl font-bold">Nej</div>
+		<div class="h-30 max-w-md text-center text-2xl">
+			<SidsteHandel />
+		</div>
+	</section>
 	<div class="flex w-48 flex-col items-center gap-4">
 		<Hype />
 	</div>
-	<div class="absolute bottom-0 pb-4">Powered by Aarhus Suburbans</div>
+	<footer class="absolute bottom-0 pb-4">Powered by Aarhus Suburbans</footer>
 </div>

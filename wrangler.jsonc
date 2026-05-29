@@ -19,7 +19,7 @@
 			"binding": "D1",
 			"database_name": "harcvhandlet",
 			"database_id": "cd34f94e-776d-4518-9aec-960414ad5c36",
-            "migrations_dir": "drizzle/migrations",
+            "migrations_dir": "drizzle",
 			"remote": false
 		}
 	]

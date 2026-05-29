@@ -1,7 +1,6 @@
 <script lang="ts">
-	import HypeButton from '$components/HypeButton.svelte';
+	import Hype from '$components/Hype.svelte';
 	import SidsteHandel from '$components/SidsteHandel.svelte';
-	import HypeCounter from '$components/HypeCounter.svelte';
 </script>
 
 <svelte:head><title>Har CV handlet i dag?</title></svelte:head>
@@ -13,8 +12,7 @@
 		<SidsteHandel />
 	</div>
 	<div class="flex w-48 flex-col items-center gap-4">
-		<HypeButton />
-		<HypeCounter />
+		<Hype />
 	</div>
 	<div class="absolute bottom-0 pb-4">Powered by Aarhus Suburbans</div>
 </div>

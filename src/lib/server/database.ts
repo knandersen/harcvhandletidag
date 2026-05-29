@@ -35,10 +35,6 @@ export const addHype = async (env: Env, level: number) => {
 
 export const getLatestTransfer = async (env: Env) => {
 	const db = drizzle(env.D1);
-	const res = await db
-		.select()
-		.from(transfers)
-		.orderBy(transfers.timestamp, desc(transfers.timestamp))
-		.limit(1);
+	const res = await db.select().from(transfers).orderBy(desc(transfers.timestamp)).limit(1);
 	return res[0] ?? null;
 };

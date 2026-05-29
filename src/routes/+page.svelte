@@ -13,6 +13,6 @@
 <div class="flex h-full w-full flex-col items-center justify-center gap-8">
 	<div class="text-9xl font-bold text-blue-950">Nej</div>
 	<div class="max-w-md text-center text-2xl text-gray-700">
-		Sidste handel var for<br /><span class="font-bold text-blue-950">{relativeTime}</span> siden.
+		Sidste handel er<br /><span class="font-bold text-blue-950">{relativeTime.string}</span> siden.
 	</div>
 </div>

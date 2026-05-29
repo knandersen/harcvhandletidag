@@ -1,4 +1,4 @@
-import { DateTime, Info } from 'luxon';
+import { DateTime } from 'luxon';
 
 export function getRelativeTime(targetDate: Date) {
 	const start = DateTime.fromJSDate(targetDate);
@@ -47,5 +47,8 @@ export function getRelativeTime(targetDate: Date) {
 	const combinedDuration = listFormatter.format(parts);
 
 	// 4. Wrap it in the Danish "For ... siden" structure exactly once
-	return combinedDuration;
+	return {
+		string: combinedDuration,
+		parts
+	};
 }

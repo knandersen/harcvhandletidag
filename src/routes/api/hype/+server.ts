@@ -1,9 +1,9 @@
-import { getTodaysHype, updateHypeLevel } from '$src/lib/hype.server';
 import type { RequestHandler } from './$types';
+import { getHype, setHype } from '$src/lib/server/database';
 
-export const GET: RequestHandler = async () => {
+export const GET: RequestHandler = async ({ platform }) => {
 	try {
-		const hype = await getTodaysHype();
+		const hype = await getHype(platform!.env);
 		return new Response(JSON.stringify(hype), {
 			headers: { 'Content-Type': 'application/json' }
 		});
@@ -18,11 +18,11 @@ export const GET: RequestHandler = async () => {
 	}
 };
 
-export async function POST({ request }) {
+export const POST: RequestHandler = async ({ request, platform }) => {
 	const { level } = await request.json();
 	console.log('Incrementing hype by:', level);
-	const hype = await updateHypeLevel(level);
+	const hype = await setHype(platform!.env, level);
 	return new Response(JSON.stringify(hype), {
 		headers: { 'Content-Type': 'application/json' }
 	});
-}
+};

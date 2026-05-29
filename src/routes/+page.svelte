@@ -5,7 +5,7 @@
 
 <svelte:head><title>Har CV handlet i dag?</title></svelte:head>
 <div
-	class="relative flex h-full min-h-screen w-full flex-col items-center justify-center gap-16 border text-foreground-400"
+	class="relative flex h-full min-h-screen w-full flex-col items-center justify-center gap-16 text-foreground-400"
 >
 	<section class="flex flex-col items-center gap-8">
 		<div class="text-9xl font-bold">Nej</div>

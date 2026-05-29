@@ -1,18 +1,20 @@
-<script>
-	import { sidsteHandel } from '$lib/constants';
-	import { getRelativeTime } from '$lib/date';
-
-	let relativeTime = $state(getRelativeTime(sidsteHandel));
-
-	setInterval(() => {
-		relativeTime = getRelativeTime(sidsteHandel);
-	}, 1000);
+<script lang="ts">
+	import Hype from '$components/Hype.svelte';
+	import SidsteHandel from '$components/SidsteHandel.svelte';
 </script>
 
 <svelte:head><title>Har CV handlet i dag?</title></svelte:head>
-<div class="flex h-full w-full flex-col items-center justify-center gap-8">
-	<div class="text-9xl font-bold text-blue-950">Nej</div>
-	<div class="max-w-md text-center text-2xl text-gray-700">
-		Sidste handel var for<br /><span class="font-bold text-blue-950">{relativeTime}</span> siden.
+<div
+	class="relative flex h-full min-h-screen w-full flex-col items-center justify-center gap-16 text-foreground-400"
+>
+	<section class="flex flex-col items-center gap-8">
+		<div class="text-9xl font-bold">Nej</div>
+		<div class="h-30 max-w-md text-center text-2xl">
+			<SidsteHandel />
+		</div>
+	</section>
+	<div class="flex w-48 flex-col items-center gap-4">
+		<Hype />
 	</div>
+	<footer class="absolute bottom-0 pb-4">Powered by Aarhus Suburbans</footer>
 </div>

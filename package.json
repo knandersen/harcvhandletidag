@@ -2,6 +2,7 @@
 	"name": "harcvhandletidag",
 	"version": "0.0.1",
 	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20260528.1",
 		"@eslint/compat": "^2.0.4",
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"@sveltejs/kit": "^2.57.0",
@@ -9,6 +10,7 @@
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.2.2",
 		"@types/node": "^24",
+		"drizzle-kit": "^0.31.10",
 		"eslint": "^10.2.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.17.0",
@@ -25,8 +27,8 @@
 	},
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev": "vite dev --host",
+		"build": "drizzle-kit generate &&vite build",
 		"preview": "bun run build && wrangler dev",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -39,6 +41,8 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/montserrat": "^5.2.8",
+		"countup.js": "^2.10.0",
+		"drizzle-orm": "^0.45.2",
 		"luxon": "^3.7.2",
 		"wrangler": "^4.94.0"
 	}

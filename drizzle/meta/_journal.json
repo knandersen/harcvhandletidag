@@ -15,6 +15,55 @@
       "when": 1780046791450,
       "tag": "0001_petite_the_stranger",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1780053162382,
+      "tag": "0002_nasty_the_initiative",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1780053743493,
+      "tag": "0003_brave_patriot",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1780054847212,
+      "tag": "0004_illegal_bulldozer",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1780056078568,
+      "tag": "0005_spicy_sunset_bain",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1780056786477,
+      "tag": "0006_striped_morph",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1780056956937,
+      "tag": "0007_wet_doctor_doom",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1780057667650,
+      "tag": "0008_perpetual_ultimo",
+      "breakpoints": true
     }
   ]
 }

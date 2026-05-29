@@ -36,11 +36,16 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"deploy": "bun run build && wrangler deploy",
-		"cf-typegen": "wrangler types"
+		"cf-typegen": "wrangler types",
+		"db:generate": "drizzle-kit generate",
+		"db:push": "drizzle-kit push",
+		"db:migrate:local": "wrangler d1 migrations apply harcvhandlet --local",
+		"db:migrate:remote": "wrangler d1 migrations apply harcvhandlet --remote"
 	},
 	"type": "module",
 	"dependencies": {
 		"@fontsource/montserrat": "^5.2.8",
+		"canvas-confetti": "^1.9.4",
 		"countup.js": "^2.10.0",
 		"drizzle-orm": "^0.45.2",
 		"luxon": "^3.7.2",

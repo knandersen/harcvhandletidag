@@ -24,4 +24,17 @@
 	--color-accent-500: #611610;
 	--color-accent-600: #280503;
 	--color-accent: var(--color-accent-300);
+
+	--animate-pulse-scale: pulse-scale 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+	/* 2. Write your standard CSS keyframes right inside the theme */
+	@keyframes pulse-scale {
+		0%,
+		100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.5) rotate(10deg);
+		} /* Grows to 112% size */
+	}
 }

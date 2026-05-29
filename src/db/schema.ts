@@ -8,3 +8,13 @@ export const hype = sqliteTable('hype', {
 		.notNull()
 		.default(sql`(current_timestamp)`)
 });
+
+export const transfers = sqliteTable('transfers', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	timestamp: text('timestamp')
+		.notNull()
+		.default(sql`(current_timestamp)`),
+	name: text('name'),
+	description: text('description'),
+	link: text('link')
+});

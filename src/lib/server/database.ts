@@ -10,7 +10,8 @@ export interface Env {
 export const getHype = async (env: Env) => {
 	const db = drizzle(env.D1);
 	const res = await db.select().from(hype).limit(1);
-	if (!res) {
+
+	if (!res || res.length === 0) {
 		console.log('No hype found for today, creating new entry with hype level 0');
 		const newHype = await db
 			.insert(hype)

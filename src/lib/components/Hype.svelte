@@ -78,4 +78,3 @@
 		<span bind:this={counterEl}>{formatterDK.format(hype.level)}</span> hype point siden seneste handel.
 	</div>
 </div>
-.

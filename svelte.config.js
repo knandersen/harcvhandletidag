@@ -23,7 +23,15 @@ const config = {
 				include: ['/*'],
 				exclude: ['<all>']
 			}
-		})
+		}),
+
+		alias: {
+			$components: './src/lib/components',
+			$src: './src',
+			$assets: './src/assets',
+			$prisma: './prisma',
+			$generated: './generated'
+		}
 	}
 };
 

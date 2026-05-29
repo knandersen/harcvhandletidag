@@ -41,7 +41,7 @@
 		counter.update(next);
 	});
 	const formatterDK = new Intl.NumberFormat('da-DK');
-	function handleClick(e: TouchEvent) {
+	function handleClick(e: MouseEvent) {
 		e.preventDefault();
 		isPollingPaused = true;
 		hype.level += 1;
@@ -70,7 +70,7 @@
 	<button
 		onclick={handleClick}
 		class="touch-action-manipulation size-40 rotate-12 rounded-full bg-accent px-4 py-2 text-4xl font-bold text-white uppercase transition-transform duration-150 ease-out hover:bg-accent-200
-               active:scale-110"
+               active:scale-150"
 	>
 		køb!
 	</button>

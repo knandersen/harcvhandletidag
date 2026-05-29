@@ -70,7 +70,7 @@
 <div class="flex flex-col items-center gap-4 text-center text-balance">
 	<button
 		onclick={handleClick}
-		class="size-40 rotate-12 rounded-full bg-accent px-4 py-2 text-4xl font-bold text-white uppercase transition-transform duration-150 ease-out hover:bg-accent-200
+		class="touch-action-manipulation size-40 rotate-12 rounded-full bg-accent px-4 py-2 text-4xl font-bold text-white uppercase transition-transform duration-150 ease-out hover:bg-accent-200
                active:scale-110"
 	>
 		køb!

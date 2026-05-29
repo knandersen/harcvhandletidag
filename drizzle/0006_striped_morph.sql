@@ -1,0 +1,2 @@
+-- Custom SQL migration file, put your code below! --
+UPDATE transfers SET description = 'er blevet købt på kontrakt fra Blah til 4 mill. kroner!', link = 'https://example.com', name = 'Markus Solbakken' WHERE id = 1;

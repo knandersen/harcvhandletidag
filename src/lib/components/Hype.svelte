@@ -10,7 +10,11 @@
 	let refreshHype: (() => Promise<void>) | null = null;
 	onMount(() => {
 		if (counterEl) {
-			counter = new CountUp(counterEl, hype.level, { duration: 0.8, useGrouping: false });
+			counter = new CountUp(counterEl, hype.level, {
+				duration: 0.8,
+				useGrouping: true,
+				separator: '.'
+			});
 			counter.start();
 		}
 

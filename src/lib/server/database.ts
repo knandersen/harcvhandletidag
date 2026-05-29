@@ -1,6 +1,6 @@
-import { hype } from '$src/db/schema';
+import { hype, transfers } from '$src/db/schema';
 import type { D1Database } from '@cloudflare/workers-types/experimental';
-import { eq, sum } from 'drizzle-orm';
+import { desc, eq, sum } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/d1';
 
 export interface Env {
@@ -32,3 +32,13 @@ export const addHype = async (env: Env, level: number) => {
 // 		// return Response.json(result);
 // 	}
 // };
+
+export const getLatestTransfer = async (env: Env) => {
+	const db = drizzle(env.D1);
+	const res = await db
+		.select()
+		.from(transfers)
+		.orderBy(transfers.timestamp, desc(transfers.timestamp))
+		.limit(1);
+	return res[0] ?? null;
+};

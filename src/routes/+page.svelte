@@ -7,11 +7,11 @@
 
 	const { data } = $props();
 
-	const transferToday =
-		new Date(data.transfer.timestamp).toDateString() === new Date().toDateString();
-	console.log('Transfer today:', transferToday);
+	const transferToday = $derived(
+		new Date(data.transfer.timestamp).toDateString() === new Date().toDateString()
+	);
 
-	const yesno = transferToday ? 'Ja' : 'Nej';
+	const yesno = $derived(transferToday ? 'Ja' : 'Nej');
 </script>
 
 <svelte:head><title>Har CV handlet i dag?</title></svelte:head>

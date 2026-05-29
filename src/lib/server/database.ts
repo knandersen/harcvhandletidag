@@ -19,12 +19,9 @@ export const getHype = async (env: Env) => {
 
 export const addHype = async (env: Env, level: number) => {
 	const db = drizzle(env.D1);
-	console.log('Adding hype level:', level);
-	const updatedHype = await db.insert(hype).values({
+	await db.insert(hype).values({
 		hypeLevel: level
 	});
-
-	console.log('Updated hype entry:', updatedHype);
 	return { message: 'OK' };
 };
 

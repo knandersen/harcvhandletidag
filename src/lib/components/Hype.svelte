@@ -9,12 +9,11 @@
 	let isPollingPaused = false; // Keep a callable reference so we can force a refresh after POST.
 	let refreshHype: (() => Promise<void>) | null = null;
 	onMount(() => {
-		// initial render
 		if (counterEl) {
 			counter = new CountUp(counterEl, hype.level, { duration: 0.8, useGrouping: false });
 			counter.start();
 		}
-		// polling
+
 		refreshHype = async () => {
 			if (isPollingPaused) return;
 			try {
@@ -35,14 +34,15 @@
 			if (timeout) clearTimeout(timeout);
 		};
 	});
-	// animate whenever hype.level changes
+
 	$effect(() => {
 		const next = hype.level;
 		if (!counter) return;
 		counter.update(next);
 	});
 	const formatterDK = new Intl.NumberFormat('da-DK');
-	function handleClick() {
+	function handleClick(e: TouchEvent) {
+		e.preventDefault();
 		isPollingPaused = true;
 		hype.level += 1;
 		count += 1;
@@ -61,7 +61,6 @@
 			} finally {
 				isPollingPaused = false;
 				await refreshHype?.();
-				// immediate resync after flush
 			}
 		}, 3000);
 	}

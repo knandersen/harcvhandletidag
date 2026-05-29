@@ -22,7 +22,8 @@
 				const res = await fetch('/api/hype');
 				if (!res.ok) return;
 				const latest = await res.json();
-				hype.level = latest.hypeLevel;
+
+				hype.level = Number(latest);
 			} catch (e) {
 				console.error('Failed to refresh hype', e);
 			}
@@ -40,6 +41,9 @@
 		if (!counter) return;
 		counter.update(next);
 	});
+	const formatterDK = new Intl.NumberFormat('da-DK');
 </script>
 
-<div><span bind:this={counterEl}>{hype.level}</span> hype point siden seneste handel.</div>
+<div class="text-center text-balance">
+	<span bind:this={counterEl}>{formatterDK.format(hype.level)}</span> hype point siden seneste handel.
+</div>

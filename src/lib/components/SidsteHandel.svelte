@@ -9,4 +9,4 @@
 	}, 1000);
 </script>
 
-Sidste handel var for<br /><span class="font-bold text-blue-950">{relativeTime}</span> siden.
+Sidste handel var for<br /><span class="font-bold">{relativeTime}</span> siden.

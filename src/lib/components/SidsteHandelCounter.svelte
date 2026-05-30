@@ -1,12 +1,18 @@
 <script lang="ts">
-	import { sidsteHandel } from '$src/lib/constants.svelte';
 	import { getRelativeTime } from '$lib/date';
+	import { SvelteDate } from 'svelte/reactivity';
 
-	let relativeTime = $state(getRelativeTime(sidsteHandel));
+	const { transfer } = $props();
 
+	console.log(transfer);
+
+	let str = $state(getRelativeTime(new SvelteDate(transfer.timestamp)).string);
 	setInterval(() => {
-		relativeTime = getRelativeTime(sidsteHandel);
+		str = getRelativeTime(new SvelteDate(transfer.timestamp)).string;
 	}, 1000);
 </script>
 
-Sidste handel var for<br /><span class="font-bold">{relativeTime.string}</span> siden.
+<div class="flex flex-col items-center gap-2">
+	<p>Sidste handel var for<br /><span class="font-bold">{str}</span> siden.</p>
+	<p class="text-sm text-balance">{transfer.name} {transfer.description}</p>
+</div>

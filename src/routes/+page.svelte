@@ -4,6 +4,7 @@
 	import SenesteHandel from '$components/SenesteHandel.svelte';
 	import SidsteHandel from '$components/SidsteHandelCounter.svelte';
 	import Voldsomt from '$components/Voldsomt.svelte';
+	import { getRelativeTime } from '$src/lib/date.js';
 
 	const { data } = $props();
 
@@ -26,7 +27,7 @@
 			{#if transferToday}
 				<SenesteHandel transfer={data.transfer} />
 			{:else}
-				<SidsteHandel />
+				<SidsteHandel transfer={data.transfer} />
 			{/if}
 		</div>
 	</section>

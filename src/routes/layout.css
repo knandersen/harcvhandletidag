@@ -2,6 +2,11 @@
 @import '@fontsource/montserrat/700.css';
 
 @import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@import 'shadcn-svelte/tailwind.css';
+
 @plugin '@tailwindcss/typography';
 
 @theme {

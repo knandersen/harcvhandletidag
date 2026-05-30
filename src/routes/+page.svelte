@@ -3,8 +3,8 @@
 	import Hype from '$components/Hype.svelte';
 	import SenesteHandel from '$components/SenesteHandel.svelte';
 	import SidsteHandel from '$components/SidsteHandelCounter.svelte';
+	import TransferOverview from '$components/TransferOverview.svelte';
 	import Voldsomt from '$components/Voldsomt.svelte';
-	import { getRelativeTime } from '$src/lib/date.js';
 
 	const { data } = $props();
 
@@ -19,6 +19,9 @@
 <div
 	class="relative flex h-full min-h-screen w-full flex-col items-center justify-center gap-16 text-foreground-400"
 >
+	<div class="absolute top-0 right-0 flex size-20 flex-col items-center justify-center">
+		<TransferOverview transfers={data.transfers} />
+	</div>
 	<section class="flex flex-col items-center gap-8">
 		<div class="text-9xl font-bold">
 			{yesno}

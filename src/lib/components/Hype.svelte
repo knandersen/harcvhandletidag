@@ -79,6 +79,6 @@
 		køb!
 	</button>
 	<div>
-		<span bind:this={counterEl}>{formatterDK.format(hype.level)}</span> hype point siden seneste handel.
+		<span bind:this={counterEl}>{formatterDK.format(hype.level)}</span> hype i transfervinduet.
 	</div>
 </div>

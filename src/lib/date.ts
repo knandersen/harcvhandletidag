@@ -52,3 +52,8 @@ export function getRelativeTime(targetDate: Date) {
 		parts
 	};
 }
+
+export function prettyDate(date: Date) {
+	// Format the date as "d. MMMM yyyy" in Danish locale
+	return DateTime.fromJSDate(date).setLocale('da').toLocaleString(DateTime.DATE_MED);
+}

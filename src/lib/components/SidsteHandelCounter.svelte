@@ -4,8 +4,6 @@
 
 	const { transfer } = $props();
 
-	console.log(transfer);
-
 	let str = $state(getRelativeTime(new SvelteDate(transfer.timestamp)).string);
 	setInterval(() => {
 		str = getRelativeTime(new SvelteDate(transfer.timestamp)).string;
